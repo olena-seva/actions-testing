@@ -22,3 +22,12 @@ jobs:
 
       - name: Run `nomad-pack`
         run: nomad-pack
+        # `nomad-pack` exits with 127, so we force-continue on error
+        continue-on-error: true
+
+      - name: Run `nomad-pack info` for `simple_service`
+        run: "nomad-pack info ./packs/simple_service"
+        
+      - name: Run `nomad-pack run` for `simple_service`
+        run: "nomad-pack run ./packs/simple_service"
+        continue-on-error: true
