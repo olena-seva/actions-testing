@@ -1,4 +1,4 @@
-name: nomad-pack Workflow
+name: nomad-pack
 
 on:
   - push
@@ -18,7 +18,7 @@ jobs:
           version: "0.0.1-techpreview2"
 
       - name: Print `$PATH`
-        run: echo ${PATH}
+        run: which nomad-pack
 
-      - name: Run `nomad-pack version`
-        run: nomad-pack version
+      - name: Run `nomad-pack`
+        run: nomad-pack
