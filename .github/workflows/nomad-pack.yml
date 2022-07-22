@@ -17,8 +17,8 @@ jobs:
         with:
           version: "0.0.1-techpreview2"
 
-      - name: Print version output
-        run: echo "${{ steps.setup.outputs.version }}"
+      - name: Print `$PATH`
+        run: echo ${PATH}
 
       - name: Run `nomad-pack version`
         run: nomad-pack version
