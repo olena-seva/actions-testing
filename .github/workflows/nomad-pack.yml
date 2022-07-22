@@ -30,4 +30,6 @@ jobs:
 
       - name: Run `nomad-pack run` for `simple_service`
         run: "nomad-pack run ./packs/simple_service"
+        env:
+          NOMAD_ADDR: "${{ secrets.NOMAD_ADDR }}"
         continue-on-error: true
