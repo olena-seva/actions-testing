@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup `nomad-pack`
-        uses: ksatirli/setup-nomad-pack@0.1.4
+        uses: ksatirli/setup-nomad-pack@0.9.0
         id: setup
         with:
           version: "0.0.1-techpreview2"
