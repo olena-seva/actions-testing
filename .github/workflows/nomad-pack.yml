@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup `nomad-pack`
-        uses: ksatirli/setup-nomad-pack@0.9.1
+        uses: ksatirli/test-action@main
         id: setup
         with:
           version: "${{ github.event.inputs.version }}"
