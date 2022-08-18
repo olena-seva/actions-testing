@@ -2,6 +2,7 @@ name: nomad-pack
 
 on:
   push:
+  release:
 
 
 jobs:
