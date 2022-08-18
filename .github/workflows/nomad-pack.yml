@@ -1,13 +1,6 @@
 name: nomad-pack
 
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version of `nomad-pack` to use.'
-        required: true
-        type: string
-        default: "0.0.1-techpreview2"
   push:
 
 
@@ -23,7 +16,7 @@ jobs:
         uses: ksatirli/test-action@0.2.0
         id: setup
         with:
-          version: "${{ github.event.inputs.version }}"
+          version: "0.0.1-techpreview2"
 
       - name: Print `$PATH`
         run: which nomad-pack
