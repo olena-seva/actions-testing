@@ -16,6 +16,8 @@ jobs:
       - name: Setup `nomad-pack` from renamed action
         uses: hashicorp/setup-nomad-pack@fixes-for-review-feedback
         id: setup
+        with:
+          version: "0.0.1-techpreview2"
 
       - name: Print `$PATH`
         run: which nomad-pack
