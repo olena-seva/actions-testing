@@ -16,7 +16,7 @@ jobs:
         uses: ksatirli/test-action@0.2.0
         id: setup
         with:
-          version: "0.0.1-techpreview2"
+          version: "0.0.1-techpreview1"
 
       - name: Print `$PATH`
         run: which nomad-pack
