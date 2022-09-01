@@ -1,0 +1,26 @@
+name: packer
+
+on:
+  push:
+
+
+jobs:
+  setup-packer:
+    runs-on: ubuntu-latest
+    name: Run Packer
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup `packer` from renamed action
+        uses: hashicorp/packer-github-actions@rewrite-to-typescript
+        
+        id: setup
+        with:
+          version: "1.8.2"
+
+      - name: Print `$PATH`
+        run: which packer
+
+      - name: Run `packer`
+        run: packer version
