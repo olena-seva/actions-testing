@@ -12,18 +12,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Run `packer` above
+        run: packer version
+
       - name: Setup `packer` from renamed action
         uses: hashicorp/packer-github-actions@rewrite-to-typescript
         
         id: setup
         with:
-          version: "1.8.0"
+          version: "0.0.1-techpreview2"
 
       - name: Print `$PATH`
         run: which packer
 
-      - name: Run `packer`
+      - name: Run `packer` below
         run: packer version
+        
+      - name: Run `nomad-pack` below
+        run: nomad-pack version
         
       - name: Run `packer`
         run: packer init
