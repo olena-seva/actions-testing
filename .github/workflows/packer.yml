@@ -24,3 +24,6 @@ jobs:
 
       - name: Run `packer`
         run: packer version
+        
+      - name: Run `packer`
+        run: packer init
