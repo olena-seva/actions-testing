@@ -28,6 +28,9 @@ jobs:
       - name: Run `packer` below
         run: packer version
         
+      - name: Pwd
+        run: pwd
+      
       - name: Run `packer`
         run: packer init "${{ github.action_path }}/packer_templates/hello-world.pkr.hcl"
 
