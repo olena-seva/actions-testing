@@ -28,8 +28,12 @@ jobs:
       - name: Run `packer` below
         run: packer version
         
-      - name: Run `nomad-pack` below
-        run: nomad-pack version
-        
       - name: Run `packer`
         run: packer init
+
+      - name: Setup `packer` from renamed action
+        uses: hashicorp/packer-github-actions@rewrite-to-typescript
+        
+        id: ranch
+        with:
+          version: "1.8.1"
