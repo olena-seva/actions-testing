@@ -20,7 +20,7 @@ jobs:
         
         id: setup
         with:
-          version: "0.0.1-techpreview2"
+          version: "1.8.0"
 
       - name: Print `$PATH`
         run: which packer
