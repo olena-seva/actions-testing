@@ -15,7 +15,6 @@ jobs:
 
       - name: Setup `packer` from renamed action
         uses: hashicorp/packer-github-actions@rewrite-to-typescript
-        
         id: setup
         with:
           version: "1.8.1"
@@ -32,14 +31,13 @@ jobs:
 
       - name: Try to setup packer for an invalid verison
         uses: hashicorp/packer-github-actions@rewrite-to-typescript
-        
-      - name: Run `packer` version
-        run: packer version
-        
-        
         id: ranch
         with:
           version: "ranch"
+          
+      - name: Run `packer` version
+        run: packer version
+        
       - name: Try to setup packer for a verison that has yet to be released
         uses: hashicorp/packer-github-actions@rewrite-to-typescript
         id: packer3
