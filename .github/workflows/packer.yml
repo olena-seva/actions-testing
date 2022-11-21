@@ -32,7 +32,7 @@ jobs:
         run: ls
       
       - name: Run `packer`
-        run: packer init "${{ github.action_path }}/packer_templates/hello-world.pkr.hcl"
+        run: packer init "${{ github.action_path }}./packer_templates/hello-world.pkr.hcl"
 
       - name: Setup `packer` from renamed action
         uses: hashicorp/packer-github-actions@rewrite-to-typescript
