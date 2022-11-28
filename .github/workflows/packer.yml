@@ -39,7 +39,7 @@ jobs:
         continue-on-error: true
           
       - name: Validate invalid version failed
-        if: steps.ranch.outcome == "success"
+        if: steps.ranch.outcome == 'success'
         run: exit 1
         
       - name: Try to setup packer for a verison that has yet to be released
@@ -50,7 +50,7 @@ jobs:
         continue-on-error: true
         
       - name: Validate invalid version failed
-        if: steps.packer3.outcome == "success"
+        if: steps.packer3.outcome == 'success'
         run: exit 1
         
       - name: No version defaults to latest
