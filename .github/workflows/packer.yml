@@ -24,7 +24,6 @@ jobs:
 
       - name: Run `packer` version
         run: packer version
-        
       
       - name: Run `packer` init
         run: packer init "${{ github.action_path }}./packer_templates/hello-world.pkr.hcl"
@@ -34,16 +33,20 @@ jobs:
         id: ranch
         with:
           version: "ranch"
+        continue-on-error: true
           
-      - name: Run `packer` version
-        run: packer version
         
       - name: Try to setup packer for a verison that has yet to be released
         uses: hashicorp/packer-github-actions@rewrite-to-typescript
         id: packer3
         with:
           version: "3.0.0"
-          
+        continue-on-error: true
+        
+      - name: No version defaults to latest
+        uses: hashicorp/packer-github-actions@rewrite-to-typescript
+        id: latest
+      
       - name: Run `packer` version
         run: packer version
-        
+
