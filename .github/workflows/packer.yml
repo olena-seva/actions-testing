@@ -39,8 +39,8 @@ jobs:
         continue-on-error: true
           
       - name: Validate invalid version failed
-        if: steps.ranch.outcome == 'failure'
-        run: exit 1
+        if: steps.ranch.outcome == 'success'
+        run: echo "Installing an invalid version expected to fail but did not" && exit 1
         
       - name: Try to setup packer for a verison that has yet to be released
         uses: hashicorp/packer-github-actions@rewrite-to-typescript
@@ -51,7 +51,7 @@ jobs:
         
       - name: Validate invalid version failed
         if: steps.packer3.outcome == 'success'
-        run: exit 1
+        run: echo "Installing a non existant expected to fail but did not" && exit 1
         
       - name: No version defaults to latest
         uses: hashicorp/packer-github-actions@rewrite-to-typescript
