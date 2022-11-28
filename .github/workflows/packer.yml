@@ -27,14 +27,6 @@ jobs:
       
       - name: Validate Packer version is latest (1.8.1)
         run: if packer version | grep -q "Packer v1.8.1"; then; echo "passed"; else; exit 1; fi;
-        
-      - name: Validate Packer version is 1.8.1
-       ## Grab the first line of the packer version only to remove out of date version notice
-        if: ${{ packer version | head -1 }} != "Packer v1.8.1"
-        uses: actions/github-script@v3
-        with:
-          script: |
-              core.setFailed('Expected packer 1.8.1 to be installed')
       
       - name: Run `packer` init
         run: packer init "${{ github.action_path }}./packer_templates/hello-world.pkr.hcl"
