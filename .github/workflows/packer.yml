@@ -58,5 +58,5 @@ jobs:
         id: latest
       
       - name: Validate Packer version is latest (currently hardcoded, need to refactor)
-        run: if packer version | grep -q "Packer v1.8.4"; then; echo "passed"; else; exit 1; fi;      
+        run: if packer version | grep -q "Packer v1.8.4"; then echo "passed"; else exit 1; fi;      
 
