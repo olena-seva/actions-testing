@@ -26,7 +26,7 @@ jobs:
         run: packer version
       
       - name: Validate Packer version is latest (1.8.1)
-        run: if packer version | grep -q "Packer v1.8.1"; then; echo "passed"; else; exit 1; fi;
+        run: if packer version | grep -q "Packer v1.8.1"; then echo "passed"; else exit 1; fi;
       
       - name: Run `packer` init
         run: packer init "${{ github.action_path }}./packer_templates/hello-world.pkr.hcl"
