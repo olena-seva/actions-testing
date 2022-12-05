@@ -3,11 +3,10 @@ name: test
 on:
   push:
 
-env:
- BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
-
 jobs:
   setup-packer:
+    env:
+      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
     runs-on: ubuntu-latest
     name: Test setup-packer
     steps:
