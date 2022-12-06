@@ -3,10 +3,9 @@ name: test
 on:
   push:
 
+  
 jobs:
   setup-packer:
-    env:
-      BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
     runs-on: ubuntu-latest
     name: Test setup-packer
     steps:
@@ -14,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Setup `packer` from renamed action
-        uses: hashicorp/packer-github-actions@${{ github.head_ref || github.ref_name }}
+        uses: hashicorp/packer-github-actions@rewrite-to-typescript
         id: setup
         with:
           version: "1.8.1"
