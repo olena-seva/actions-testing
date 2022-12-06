@@ -64,4 +64,4 @@ jobs:
         run: packer version
 
       - name: Run `packer` init
-        run: packer init "${{ github.action_path }}./test/hello-world.pkr.hcl"
+        run: packer init "${{ github.action_path }}./packer_templates/hello-world.pkr.hcl"
