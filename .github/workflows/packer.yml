@@ -31,7 +31,7 @@ jobs:
         run: packer init "${{ github.action_path }}./packer_templates/hello-world.pkr.hcl"
 
       - name: Try to setup packer for an invalid verison
-        uses: hashicorp/packer-github-actions@rewrite-to-typescript
+        uses: hashicorp/packer-github-actions@master
         id: ranch
         with:
           version: "ranch"
@@ -42,7 +42,7 @@ jobs:
         run: echo "Installing an invalid version expected to fail but did not" && exit 1
 
       - name: Try to setup packer for a verison that has yet to be released
-        uses: hashicorp/packer-github-actions@rewrite-to-typescript
+        uses: hashicorp/packer-github-actions@master
         id: packer3
         with:
           version: "3.0.0"
@@ -53,7 +53,7 @@ jobs:
         run: echo "Installing a non existant expected to fail but did not" && exit 1
 
       - name: No version defaults to latest
-        uses: hashicorp/packer-github-actions@rewrite-to-typescript
+        uses: hashicorp/packer-github-actions@master
         id: latest
 
      ## TODO, don't hardcode version
