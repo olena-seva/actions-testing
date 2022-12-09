@@ -15,7 +15,9 @@ jobs:
       - name: Packer Build
         uses: hashicorp/setup-packer@master
         with:
-          command: version
+          command: build
+          target: packer
+          arguments: "-force"
           
       
 
